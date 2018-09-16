@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Details</title>
+    <link rel="stylesheet" type="text/css" href="Style_1.css">
+    <script>
+        function findGetParameter(parameterName) {
+            var urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(parameterName);
+        }
+
+        // function findGetParameter1(parameterName) {
+        //     var result = null,
+        //     tmp = [];
+        //     var items = location.search.substr(1).split("&");
+        //     for (var index = 0; index < items.length; index++) {
+        //         tmp = items[index].split("=");
+        //         if (tmp[0] === parameterName) result = decodeURIComponent(tmp[1]);
+        //     }
+        //     return result;
+        // }
+
+    </script>
+</head>
+
+<body>
+    <div class="row">
+        <div class="colHeader_1">
+            <img class="logo" src="logo.jpeg" alt="logo">
+        </div>
+        <div class="colHeader_2">
+            <h1 class="storeName"> STANLEY SHOES</h1>
+            <h4 class="slogan">Make things happen</h4>
+        </div>
+    </div>
+    <div class="row2">
+        <div class='item' name='sneakers'>
+            
+            <form action="order.html">
+                <div class="row2_1">
+                    <div class="product_img">
+                        <img class="col_img" src="sneakers_1.png">
+                    </div>
+                    <div class="col_param">
+                        <input readonly="readonly" type="text" name="name1" value="Sneakers1" />
+                        <input readonly="readonly" type="text" name="price1" value="15" />
+                        <h5>Size</h5>
+                        <select name="size1">
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                        </select>
+                        <h5>Select Colour</h5>
+                        <select name="color1">
+                            <option value="blue">Blue</option>
+                            <option value="red">Red</option>
+                            <option value="yellow">Yellow</option>
+                            <option value="grey">Grey</option>
+                        </select>
+                        <h5>Quantity</h5>
+                        <select name="quantity1">
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="row2_1">
+                    <div class="product_img">
+                        <img class="col_img" src="sneakers_2.png">
+                    </div>
+                
+                    <div class="col_param">
+                        <input readonly="readonly" type="text" name="name2" value="Sneakers2" />
+                        <input readonly="readonly" type="text" name="price2" value="35" />
+                        <h5>Size</h5>
+                        <select name="size2">
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                        </select>
+                        <h5>Select Colour</h5>
+                        <select name="color2">
+                            <option value="blue">Blue</option>
+                            <option value="red">Red</option>
+                            <option value="yellow">Yellow</option>
+                            <option value="grey">Grey</option>
+                        </select>
+                        <h5>Quantity</h5>
+                        <select name="quantity2">
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="row2_1">
+                    <div class="product_img">
+                        <img class="col_img" src="sneakers_3.png">
+                    </div>
+                    <div class="col_param">
+                        <input readonly="readonly" type="text" name="name3" value="Sneakers3" />
+                        <input readonly="readonly" type="text" name="price3" value="35" />
+                        <h5>Size</h5>
+                        <select name="size3">
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                        </select>
+                        <h5>Select Colour</h5>
+                        <select name="color3">
+                            <option value="blue">Blue</option>
+                            <option value="red">Red</option>
+                            <option value="yellow">Yellow</option>
+                            <option value="grey">Grey</option>
+                        </select>
+                        <h5>Quantity</h5>
+                        <select name="quantity3">
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                        </select>
+                    </div>
+                </div>
+        
+                
+        
+                <!--  ///////////////////////////////////////////// -->
+                <div>
+                    <input type="submit" value="Submit">
+                    <input type="reset" value="Cancel" onClick="javascript:location.href='index.html';" />
+                    
+                    <a href="" class="button" style="background-color:#f14e4e">Button 1</a>
+
+                </div>
+            </form>
+        </div>
+        <div class='item' name='sandals'>
+            BBB
+        </div>
+    </div>
+</body>
+
+<script>
+    var items = document.getElementsByClassName('item');
+    console.log("items.length="+ items.length);
+    var category = findGetParameter('category');
+    console.log("category="+category);
+    for (var i = 0; i < items.length; i++) {
+            //alert(items(i));
+        var itemCategoryName = items[i].getAttribute('name');
+        console.log("itemCategoryName="+itemCategoryName);
+        if (itemCategoryName != category) {
+            items[i].style.display = 'none';
+        }
+    }
+</script>
+</html>

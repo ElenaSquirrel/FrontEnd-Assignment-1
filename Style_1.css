@@ -1,0 +1,214 @@
+/* img{
+    width:100px;
+    height:100px;
+} */
+
+.shoes{
+    width:180px;
+    height:250px;
+    
+ 
+} 
+
+.row {
+    display: flex;
+    background-color: lightcoral;
+}
+
+
+a:link{
+    text-decoration: none;
+}
+.logo{
+    border-radius: 25%;
+}
+
+
+/* On desktop screens that are 1200px wide or more, the background color is yellow */
+@media screen and (min-width: 1200px) {
+body {
+    background-color: yellow;
+    }
+    a {
+        display: flex;
+    }
+     .row_2 {
+        display: flex;
+    }
+
+    .colHeader_1{
+        height: auto;
+        
+
+    }
+    .logo {
+        
+        height: auto;
+        max-width:120px;
+        
+    }
+    .colHeader_2{
+       
+
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+        height:auto; 
+        text-align: center;
+    }
+    .col-1{
+        display: flex;
+        max-width:50%; 
+        /* 100% */
+
+    }
+    .col-2{
+        display: flex;
+        width: auto;
+
+    }
+     .col-21{
+        display: block;
+        width: 50%;
+        text-align: center;
+    }
+    .col-22 {
+        display: block;
+        width:50%;
+        text-align:justify;
+    }
+    .col_img{
+        display: flex;
+        max-width: 200px;
+        /* margin: auto; */
+    }
+    .row2_1{
+        display: inline-block;
+
+    }
+}
+
+/* On tablet screens that are 800-1200 wide, the background color is lightblue */
+@media screen and (min-width: 800px) and (max-width: 1199px) {
+    body {
+        background-color: lightblue;
+     }
+    a {
+        display: flex;
+    }
+     .row_2 {
+        display: flex;
+    }
+
+    .colHeader_1{
+        height: auto;
+        
+
+    }
+    .logo {
+        
+        height: auto;
+        max-width:120px;
+        
+    }
+    .colHeader_2{
+       
+
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+        height:auto; 
+        text-align: center;
+    }
+    .col-1{
+        display: flex;
+        max-width:100%;
+
+    }
+    .col-2{
+        display: block;
+        width: auto;
+
+    }
+     .col-21{
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+    .col-22 {
+        display: flex;
+        width:100%;
+        text-align:justify;
+    }
+    .row2_1{
+        display: flex;
+    }
+    .product_img{
+        float:left;
+        width: 50%;
+  
+    } 
+    .col_img{
+        width: 50%;
+        height: auto;
+    }
+    .col_param{
+        float:left;
+        width: 50%;
+    } 
+
+} 
+
+/* On phone screens that are 799px wide or less, the background color is green */
+@media screen and (max-width: 799px) {
+    body {
+        background-color: lightgreen;
+    }
+    a {
+        display: block;
+    }
+    .row_2 {
+        display: block;
+    }
+    .colHeader_1{
+        width:100%;
+        display: none;
+
+    }
+    .colHeader_2{
+        width:100%;
+        text-align: center;
+    }
+     .col-1{
+        width:100%;
+        text-align: center;
+
+
+    }
+    .col-2{
+        width:100%;
+        text-align: center;
+    }
+    .col-21{
+        width:100%;
+    
+
+    }
+    .col-22{
+        width:100%;
+        display:none;
+    }
+    .col_img{
+        width: 100%;
+        height: auto;
+        display:block;
+        text-align: center;
+    }
+    .col_param{
+        display: block;
+        width:100%;
+        text-align: center;
+    }           
+}

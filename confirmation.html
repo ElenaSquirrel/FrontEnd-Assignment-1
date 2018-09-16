@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Confirmation</title>
+    <link rel="stylesheet" type="text/css" href="Style_1.css">
+    <script>
+        
+        function myFunction() {
+        var urlParams = new URLSearchParams(window.location.search); // take params from query string (URL)
+        var totalPrice = urlParams.get("hdnTotalPrice");
+        console.log(totalPrice);
+    
+               
+        
+
+        document.getElementById('paid').innerHTML = '$' + totalPrice;
+        document.getElementById('trans_status').innerHTML = 'In progress';
+        var confirmNo = Math.floor((Math.random() * 1000000) + 1);
+        document.getElementById('conf_num').innerHTML = confirmNo;
+        }
+
+
+
+        
+    </script>
+</head>
+
+<body onload="myFunction()"> <!-- Start function on load event (page)-->
+    <h3>Confirmation: your order submitted</h3>
+    <h3>Your confirmation number is:<span id="conf_num"></span></h3>
+    <h3>Your transaction status is:<span id="trans_status"></span></h3>
+    <h3>Price: <span id="paid"></span></h3>
+
+</body>
+</html>
+

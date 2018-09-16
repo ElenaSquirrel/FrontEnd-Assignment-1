@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Order</title>
+    <link rel="stylesheet" type="text/css" href="Style_1.css">
+    <script>
+        // var urlParams = new URLSearchParams(window.location.search);
+        // var keys = urlParams.keys();
+        // for(key of keys) { 
+        //     console.log(key); 
+        // }
+
+        // var entries = urlParams.entries();
+        // for(pair of entries) { 
+        // console.log(pair[0], pair[1]); 
+        // }
+
+
+
+        function myFunction() {
+        var urlParams = new URLSearchParams(window.location.search); // take params from query string (URL)
+        var entries = urlParams.entries(); // key - value collection from query string
+        
+        var quantity = Array.from(urlParams).length/5;
+        var i = 0;
+        var goods = [];
+        var item = {};
+        for(pair of entries)
+        {
+            if (i%5 == 0) {
+                item.name=pair[1];
+                console.log(item.name);
+            }
+            if (i%5 == 1) {
+                item.price = parseFloat(pair[1]);
+                console.log(item.price);
+            }
+            if (i%5 == 2) {
+                item.size = pair[1];
+                console.log(item.size);
+            }
+            if (i%5 == 3) {
+                item.color = pair[1];
+                console.log(item.color);
+            }
+            if (i%5 == 4) {
+                item.quantity = parseInt(pair[1]);
+                console.log(item.quantity);
+                goods.push(item);
+                item = {};
+            }
+            i = i+1;
+        }
+        console.log(goods);
+
+        var html = '<ul>'; // dynamic html for goods collection
+        var totalPrice = 0;
+        for(item of goods) {
+            if(item.quantity != 0){
+                html = html + '<li>' + item.name + ';' 
+                + item.color + ';' + item.size + ';' 
+                + item.quantity + ';' +item.price  + '</li>';
+                totalPrice = totalPrice + item.price*item.quantity;
+                console.log('Total Price = ' + totalPrice);
+            }         
+        }
+          html = html + '</ul>';
+
+        document.getElementById("goods").innerHTML = html;
+        document.getElementById("totalPrice").innerHTML = totalPrice.toString();
+        document.getElementById("hdnTotalPrice").value = totalPrice.toString();
+        }
+
+
+
+
+
+   
+
+        
+    </script>
+</head>
+
+<body onload="myFunction()">
+    <form action="confirmation.html">
+        <div id="goods">
+
+        </div>
+        <h4>Total price:
+            $<label id="totalPrice" readonly="readonly" type="text" name="totalPrice"></label>
+        </h4>
+        <input id="hdnTotalPrice" hidden="hidden" name="hdnTotalPrice" type="text" value=""/>
+        *First name:<br><input type="text" name="First name"><br>
+        *Last name:<br><input type="text" name="Last name"><br>
+        *Delivery <address></address>:<br><input type="text" name="Delivery address"><br>
+        *Telephone number:<br><input type="text" name="Telephone number"><br>
+        Credit card details:<br>
+        *Name on Card <br><input type="text" name="Name on Card"><br>
+        *Credit card number <br><input type="text" name="Credit card number"><br>
+        *Exp date MM/YY <br><input type="text" name="Exp date MM/YY"><br>
+        *CVV <br><input type="text" name="CVV"><br>      
+        <input type="submit" value="Submit">
+        <input type="reset" value="Cancel" onClick="javascript:location.href='index.html';" />
+    </form>  
+</body>
+</html>
